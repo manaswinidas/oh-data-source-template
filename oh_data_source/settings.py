@@ -18,17 +18,17 @@ DEBUG = False if os.getenv('DEBUG', '').lower() == 'false' else True
 HEROKU_APP = True if os.getenv('HEROKU_APP', '').lower() == 'true' else False
 
 # Allow all host headers if this is running as a Heroku app.
-if HEROKU_APP:
+if not HEROKU_APP:
     ALLOWED_HOSTS = ['*']
 else:
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ['https://newtemplate.herokuapp.com']
 
 # Open Humans configuration
 OH_CLIENT_ID = os.getenv('OH_CLIENT_ID')
 OH_CLIENT_SECRET = os.getenv('OH_CLIENT_SECRET')
 OH_ACTIVITY_PAGE = os.getenv('OH_ACTIVITY_PAGE')
 OH_BASE_URL = 'https://www.openhumans.org'
-APP_BASE_URL = os.getenv('APP_BASE_URL', 'http://127.0.0.1:5000')
+APP_BASE_URL = os.getenv('APP_BASE_URL')
 
 # Applications installed
 INSTALLED_APPS = [
