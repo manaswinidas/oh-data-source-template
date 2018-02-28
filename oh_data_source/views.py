@@ -12,7 +12,7 @@ from .tasks import xfer_to_open_humans
 # Open Humans settings
 OH_BASE_URL = 'https://www.openhumans.org'
 
-APP_BASE_URL = os.getenv('APP_BASE_URL', 'http://127.0.0.1:5000')
+APP_BASE_URL = os.getenv('APP_BASE_URL')
 
 # Set up logging.
 logger = logging.getLogger(__name__)
