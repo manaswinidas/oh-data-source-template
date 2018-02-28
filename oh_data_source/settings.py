@@ -21,7 +21,7 @@ HEROKU_APP = True if os.getenv('HEROKU_APP', '').lower() == 'true' else False
 if not HEROKU_APP:
     ALLOWED_HOSTS = ['*']
 else:
-    ALLOWED_HOSTS = ['https://newtemplate.herokuapp.com']
+    ALLOWED_HOSTS = ['*']
 
 # Open Humans configuration
 OH_CLIENT_ID = os.getenv('OH_CLIENT_ID')
